@@ -27,6 +27,11 @@ class InstaFaceBloc extends Bloc<BlocEvent, BlocState> {
       }
     });
 
+    on<AddFeedEvent>((event, emit) async {
+      print('_printEventHere ${event.feedItemModel?.description}');
+
+
+    });
 
   }
 }

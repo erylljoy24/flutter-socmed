@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:socmed/bloc/insta_face_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:socmed/data/data_provider/model/FeedItemModel.dart';
 import 'package:socmed/presentation/widgets/FeedListViewWidget.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -119,11 +120,7 @@ class _MyStatefulWidgetState extends State<HomeScreen> {
           TextButton(
             child: const Text('Post it'),
             onPressed: () {
-              if(selectedColor != null){
-                setState(() {
-
-                });
-              }
+              instaFaceBloc.add(AddFeedEvent(FeedItemModel(id: 1, title: titleController.text, description: captionController.text)));
               Navigator.of(context).pop();
             },
           ),
